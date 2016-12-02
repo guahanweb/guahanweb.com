@@ -18,7 +18,7 @@
 <meta name="twitter:creator" content="@guahanweb" />
 <meta property="og:url" content="https://www.guahanweb.com/garth/" />
 <meta property="og:title" content="Garth Henson | whoami" />
-<meta property="og:description" content="Garth is a Staff Software Engineer at The Walt Disney Company, working as the tech lead for an Emerging Tech team in Seattle - focusing on JavaScript and IoT." />
+<meta property="og:description" content="Garth is a Staff Software Engineer at The Walt Disney Company, working as the tech lead for an Emerging Tech team in Seattle." />
 <meta property="og:image" content="https://www.guahanweb.com/wp-content/themes/guahanweb.com/images/me-square.jpg" />
 
 <link rel="profile" href="http://gmpg.org/xfn/11">
