@@ -15,6 +15,11 @@
 <!-- Social Tags -->
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@guahanweb" />
+<meta name="twitter:creator" content="@guahanweb" />
+<meta property="og:url" content="https://www.guahanweb.com/garth/" />
+<meta property="og:title" content="Garth Henson | whoami" />
+<meta property="og:description" content="Garth is a Lead Engineer at The Walt Disney Company, focusing on JavaScript and IoT solutions across the stack." />
+<meta property="og:image" content="https://www.guahanweb.com/wp-content/themes/guahanweb.com/images/me.png" />
 
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
