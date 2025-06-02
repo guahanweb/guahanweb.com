@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Pillars Section
+   ========================================================================== */
+
+.pillars {
+    padding: var(--space-2xl) 0;
+}
+
+.pillars__title {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    color: var(--color-text);
+    font-weight: var(--font-weight-light);
+}
+
+.pillars__grid {
+    display: grid;
+    gap: var(--space-lg);
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .pillars__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.pillar {
+    text-align: center;
+    padding: var(--space-md) var(--space-sm);
+}
+
+.pillar__icon {
+    color: var(--color-secondary);
+    margin-bottom: var(--space-sm);
+    display: flex;
+    justify-content: center;
+    opacity: 0.9;
+}
+
+.pillar__icon svg {
+    width: 40px;
+    height: 40px;
+    stroke-width: 1.5;
+}
+
+.pillar__title {
+    margin-bottom: var(--space-sm);
+    color: var(--color-text);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-lg);
+}
+
+.pillar__description {
+    color: var(--color-text-light);
+    line-height: 1.6;
+    font-size: var(--font-size-sm);
+}

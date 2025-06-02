@@ -1,0 +1,29 @@
+---
+layout: layouts/base.njk
+title: Data Test
+---
+
+<section class="hero">
+    <div class="container">
+        <h1>Data Test Page</h1>
+        
+        <h2>Available Data Objects:</h2>
+        <ul>
+            <li>speakingTopics: {{ speakingTopics | dump }}</li>
+            <li>speakingEngagements: {{ speakingEngagements | dump }}</li>
+        </ul>
+        
+        <h2>Speaking Topics Count:</h2>
+        <p>{{ speakingTopics.topics.length if speakingTopics.topics else "No topics found" }}</p>
+        
+        <h2>Speaking Engagements Stats:</h2>
+        <p>Total Engagements: {{ speakingEngagements.stats.totalEngagements if speakingEngagements.stats else "No stats found" }}</p>
+        
+        <h2>First Topic (if available):</h2>
+        {% if speakingTopics.topics and speakingTopics.topics.length > 0 %}
+            <p>{{ speakingTopics.topics[0].title }}</p>
+        {% else %}
+            <p>No topics available</p>
+        {% endif %}
+    </div>
+</section>

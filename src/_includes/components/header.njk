@@ -1,0 +1,21 @@
+{% from "components/navigation.njk" import renderNav %}
+
+<header class="header">
+    <div class="container">
+        <nav class="nav">
+            <a href="/" class="nav__logo">
+                <span class="nav__logo-primary">Guahan</span><span class="nav__logo-secondary">Web</span>
+            </a>
+            
+            <button class="nav__toggle" aria-label="Toggle navigation">
+                <span class="nav__toggle-line"></span>
+                <span class="nav__toggle-line"></span>
+                <span class="nav__toggle-line"></span>
+            </button>
+            
+            <div class="nav__menu">
+                {{ renderNav(navigation.main) }}
+            </div>
+        </nav>
+    </div>
+</header>

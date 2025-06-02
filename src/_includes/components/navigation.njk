@@ -1,0 +1,15 @@
+{% macro renderNav(items, type = 'main') %}
+  {% set enabledItems = items | filter('enabled') | sortBy('order') %}
+  <ul class="nav__list">
+    {% for item in enabledItems %}
+      <li>
+        <a 
+          href="{{ item.url }}" 
+          class="nav__link{% if item.url == page.url %} nav__link--active{% endif %}"
+        >
+          {{ item.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endmacro %} 

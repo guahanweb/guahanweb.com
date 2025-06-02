@@ -1,0 +1,168 @@
+---
+layout: layouts/base.njk
+title: Speaking & Training
+description: Global speaking engagements on technical leadership, AI strategy, and cross-cultural team management
+---
+
+{% set upcomingEngagements = speaking.engagements | upcoming("startDate") | sortBy("startDate", true) %}
+{% set pastEngagements = speaking.engagements | past("startDate") | sortBy("startDate", true) | limit(6) %}
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero__content">
+            <h1 class="hero__title">
+                Keynotes, Workshops &
+                <span class="hero__title-accent">Technical Leadership</span>
+            </h1>
+            <p class="hero__subtitle">
+                Transforming how technical leaders think about strategy, innovation, and team building. 
+                From intimate workshops to international conference keynotes—sharing insights 
+                that help organizations navigate complex technical challenges.
+            </p>
+            <div class="hero__actions">
+                <a href="#topics" class="btn btn--primary">Speaking Topics</a>
+                <a href="#engagements" class="btn btn--secondary">Recent Engagements</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Speaking Topics -->
+<section id="topics" class="topics">
+    <div class="container">
+        <h2 class="topics__title">Core Speaking Topics</h2>
+        <div class="topics__grid">
+            {% if speaking and speaking.topics %}
+                {% for topic in speaking.topics %}
+                    {% if topic.featured %}
+                    <div class="topic-card">
+                        <div class="topic-card__header">
+                            <h3 class="topic-card__title">{{ topic.title }}</h3>
+                            <p class="topic-card__subtitle">{{ topic.subtitle }}</p>
+                        </div>
+                        <div class="topic-card__content">
+                            <p class="topic-card__description">{{ topic.description }}</p>
+                            <div class="topic-card__details">
+                                <div class="topic-detail">
+                                    <strong>Audiences:</strong> {{ topic.audiences | join(", ") }}
+                                </div>
+                                <div class="topic-detail">
+                                    <strong>Formats:</strong> {{ topic.formats | join(", ") }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- Upcoming Engagements -->
+<section id="engagements" class="engagements">
+    <div class="container">
+        {% if upcomingEngagements | length %}
+        <h2 class="engagements__title">Upcoming Engagements</h2>
+        <div class="engagements__list">
+            {% for engagement in upcomingEngagements %}
+                <article class="engagement">
+                    <div class="engagement__header">
+                        <div class="engagement__date">
+                            <time datetime="{{ engagement.startDate }}" class="engagement__date-display">
+                                <span class="engagement__month">{{ engagement.startDate | date("MMM") }}</span>
+                                <span class="engagement__day">{{ engagement.startDate | date("DD") }}</span>
+                            </time>
+                        </div>
+                        <div class="engagement__primary">
+                            <h3 class="engagement__title">
+                                {{ engagement.eventName }}
+                                {% for presentation in engagement.presentations %}
+                                    {% if presentation.type == "keynote" and presentation.isMainPresentation %}
+                                        <span class="keynote-badge">Keynote</span>
+                                    {% endif %}
+                                {% endfor %}
+                            </h3>
+                            <p class="engagement__location">{{ engagement.location }}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="engagement__content">
+                        {% for presentation in engagement.presentations %}
+                            {% if presentation.isMainPresentation %}
+                            <div class="engagement__presentation">
+                                <h4 class="engagement__presentation-title">{{ presentation.title }}</h4>
+                                <p class="engagement__description">{{ presentation.description }}</p>
+                                <div class="engagement__meta">
+                                    <span class="meta-tag meta-tag--type">{{ presentation.type | title }}</span>
+                                    <span class="meta-tag meta-tag--duration">{{ presentation.duration }}</span>
+                                </div>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                        
+                        {% if engagement.presentations.length > 1 %}
+                        <div class="engagement__additional">
+                            <span class="additional-count">+ {{ engagement.presentations.length - 1 }} additional session{{ 's' if engagement.presentations.length > 2 else '' }}</span>
+                        </div>
+                        {% endif %}
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="content-blurb content-blurb--compact">
+            <p class="content-blurb__primary">Every great speaking engagement starts with a conversation.</p>
+            <p class="content-blurb__secondary">Ready to explore how technical leadership insights can transform your next event?</p>
+            <div class="content-blurb__cta">
+                <a href="/contact/" class="btn btn--primary">Let's Start That Conversation</a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Recent Highlights -->
+<section class="recent-engagements">
+    <div class="container">
+        <h2 class="recent-engagements__title">Recent Highlights</h2>
+        <div class="recent-engagements__grid">
+            {% for engagement in pastEngagements %}
+                <article class="recent-engagement">
+                    <div class="recent-engagement__header">
+                        <time datetime="{{ engagement.startDate }}" class="recent-engagement__date">
+                            {{ engagement.startDate | date("MMM YYYY") }}
+                        </time>
+                        {% for presentation in engagement.presentations %}
+                            {% if presentation.type == "keynote" and presentation.isMainPresentation %}
+                                <span class="keynote-badge keynote-badge--small">Keynote</span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    
+                    <h3 class="recent-engagement__title">{{ engagement.eventName }}</h3>
+                    <p class="recent-engagement__location">{{ engagement.location }}</p>
+                    
+                    {% for presentation in engagement.presentations %}
+                        {% if presentation.isMainPresentation %}
+                        <div class="recent-engagement__presentation">
+                            <h4 class="recent-engagement__presentation-title">{{ presentation.title }}</h4>
+                            <p class="recent-engagement__description">{{ presentation.description | truncate(120) }}</p>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                    
+                    {% if engagement.presentations.length > 1 %}
+                    <div class="recent-engagement__additional">
+                        <span class="additional-count">{{ engagement.presentations.length }} sessions delivered</span>
+                    </div>
+                    {% endif %}
+                </article>
+            {% else %}
+                <!-- empty collection -->
+            {% endfor %}
+        </div>
+    </div>
+</section>
+

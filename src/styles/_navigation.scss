@@ -1,0 +1,123 @@
+.header {
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) 0;
+}
+
+.nav__logo {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.nav__logo-primary {
+  color: var(--color-primary);
+}
+
+.nav__logo-secondary {
+  color: var(--color-secondary);
+}
+
+.nav__toggle {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-xs);
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav__toggle-line {
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text);
+  transition: var(--transition);
+}
+
+.nav__menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-sm);
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.nav__link {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: var(--font-weight-normal);
+  transition: var(--transition);
+  padding: var(--space-xs) 0;
+  font-size: var(--font-size-sm);
+}
+
+.nav__link:hover {
+  color: var(--color-primary);
+}
+
+.nav__link--cta {
+  background-color: var(--color-primary);
+  color: white;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--border-radius);
+}
+
+.nav__link--cta:hover {
+  background-color: var(--color-primary-light);
+  color: white;
+}
+
+.nav__link--active {
+  color: var(--color-primary);
+  font-weight: 600;
+  position: relative;
+}
+
+.nav__link--active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+}
+
+@media (min-width: 768px) {
+  .nav__toggle {
+    display: none;
+  }
+
+  .nav__menu {
+    display: block;
+    position: static;
+    border: none;
+    padding: 0;
+  }
+
+  .nav__list {
+    flex-direction: row;
+    align-items: center;
+  }
+} 

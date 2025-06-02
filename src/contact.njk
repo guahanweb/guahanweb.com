@@ -1,0 +1,225 @@
+---
+layout: layouts/base.njk
+title: Contact
+description: Get in touch for speaking engagements, strategic advisory services, or technical due diligence. Let's discuss how we can work together.
+---
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero__content">
+            <h1 class="hero__title">
+                Let's Start the
+                <span class="hero__title-accent">Conversation</span>
+            </h1>
+            <p class="hero__subtitle">
+                Whether you're looking for keynote speaking, strategic technical advisory, 
+                or due diligence expertise—I'm here to help. Share your challenge, 
+                and let's explore how we can work together to achieve your goals.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form -->
+<section class="contact-form">
+    <div class="container">
+        <div class="contact-form__wrapper">
+            <div class="contact-form__content">
+                <h2 class="contact-form__title">Get In Touch</h2>
+                <p class="contact-form__description">
+                    Tell me about your project, event, or challenge. I'll get back to you within as quickly as possible
+                    with insights on how we can move forward together.
+                </p>
+                
+                <form class="form" action="https://formspree.io/f/xqabzbvj" method="POST">
+                    <div class="form__row">
+                        <div class="form__group">
+                            <label for="name" class="form__label">Name *</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                class="form__input" 
+                                required
+                                placeholder="Your full name"
+                            >
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="email" class="form__label">Email *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                class="form__input" 
+                                required
+                                placeholder="your.email@company.com"
+                            >
+                        </div>
+                    </div>
+                    
+                    <div class="form__row">
+                        <div class="form__group">
+                            <label for="company" class="form__label">Company/Organization</label>
+                            <input 
+                                type="text" 
+                                id="company" 
+                                name="company" 
+                                class="form__input" 
+                                placeholder="Your company or organization"
+                            >
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="inquiry_type" class="form__label">Inquiry Type *</label>
+                            <select id="inquiry_type" name="inquiry_type" class="form__select" required>
+                                <option value="">Select inquiry type</option>
+                                <option value="speaking">Speaking & Training</option>
+                                <option value="advisory">Strategic Advisory & Consulting</option>
+                                <option value="due_diligence">Technical Due Diligence</option>
+                                <option value="general">General Inquiry</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form__group">
+                        <label for="timeline" class="form__label">Project Timeline</label>
+                        <select id="timeline" name="timeline" class="form__select">
+                            <option value="">Select timeline (optional)</option>
+                            <option value="immediate">Immediate (within 1 month)</option>
+                            <option value="near_term">Near-term (1-3 months)</option>
+                            <option value="planning">Planning ahead (3+ months)</option>
+                            <option value="exploring">Just exploring</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form__group">
+                        <label for="message" class="form__label">Message *</label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            class="form__textarea" 
+                            rows="6" 
+                            required
+                            placeholder="Tell me about your project, event, or challenge. Include any relevant details about your audience, goals, or specific requirements."
+                        ></textarea>
+                    </div>
+                    
+                    <!-- Honeypot field for spam protection -->
+                    <input type="text" name="_gotcha" style="display:none" />
+                    
+                    <div class="form__actions">
+                        <button type="submit" class="btn btn--primary form__submit">
+                            Send Message
+                        </button>
+                        <p class="form__note">
+                            I'll respond as quickly as possible. For urgent speaking requests, 
+                            please mention "URGENT" in your subject line.
+                        </p>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="contact-form__info">
+                <div class="contact-info">
+                    <h3 class="contact-info__title">Quick Response</h3>
+                    <div class="contact-info__item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12,6 12,12 16,14"/>
+                        </svg>
+                        <span>Timely responses</span>
+                    </div>
+                    <div class="contact-info__item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M2 12h20"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                        <span>Available globally for engagements</span>
+                    </div>
+                    <div class="contact-info__item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 11H5a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h4"/>
+                            <path d="M15 11h4a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-4"/>
+                            <path d="M12 2v20"/>
+                            <path d="M8 6l4-4 4 4"/>
+                            <path d="M16 18l-4 4-4-4"/>
+                        </svg>
+                        <span>Strategic guidance for complex challenges</span>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <h3 class="contact-info__title">What to Expect</h3>
+                    <div class="contact-steps">
+                        <div class="contact-step">
+                            <span class="contact-step__number">1</span>
+                            <p class="contact-step__text">I'll review your inquiry and respond with initial thoughts</p>
+                        </div>
+                        <div class="contact-step">
+                            <span class="contact-step__number">2</span>
+                            <p class="contact-step__text">We'll schedule a brief call to discuss your specific needs</p>
+                        </div>
+                        <div class="contact-step">
+                            <span class="contact-step__number">3</span>
+                            <p class="contact-step__text">I'll provide a tailored proposal with clear next steps</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Alternative Contact Methods -->
+<section class="highlights">
+    <div class="container">
+        <h2 class="highlights__title">Other Ways to Connect</h2>
+        <div class="highlights__grid">
+            <div class="highlight">
+                <div class="pillar__icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+                    </svg>
+                </div>
+                <h3 class="highlight__title">Speaking Engagements</h3>
+                <p class="highlight__description">
+                    Planning a conference or event? Let's discuss how technical leadership insights 
+                    can create meaningful impact for your audience.
+                </p>
+            </div>
+            
+            <div class="highlight">
+                <div class="pillar__icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M9 12l2 2 4-4"/>
+                        <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/>
+                        <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/>
+                        <path d="M12 3c0 1-1 3-3 3s-3-2-3-3 1-3 3-3 3 2 3 3"/>
+                        <path d="M12 21c0-1 1-3 3-3s3 2 3 3-1 3-3 3-3-2-3-3"/>
+                    </svg>
+                </div>
+                <h3 class="highlight__title">Strategic Advisory</h3>
+                <p class="highlight__description">
+                    Need fractional CTO guidance or strategic technical direction? 
+                    I work with organizations navigating growth and transformation.
+                </p>
+            </div>
+            
+            <div class="highlight">
+                <div class="pillar__icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                    </svg>
+                </div>
+                <h3 class="highlight__title">Due Diligence</h3>
+                <p class="highlight__description">
+                    Evaluating technical organizations for investment or acquisition? 
+                    I provide comprehensive assessments trusted by VCs and executive teams.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

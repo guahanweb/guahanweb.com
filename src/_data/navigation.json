@@ -1,0 +1,40 @@
+{
+  "main": [
+    {
+      "title": "Home",
+      "url": "/",
+      "enabled": true,
+      "order": 1
+    },
+    {
+      "title": "Leadership Consulting",
+      "url": "/consulting/",
+      "enabled": false,
+      "order": 2
+    },
+    {
+      "title": "Speaking & Training",
+      "url": "/speaking/",
+      "enabled": true,
+      "order": 3
+    },
+    {
+      "title": "Insights",
+      "url": "/insights/",
+      "enabled": false,
+      "order": 4
+    },
+    {
+      "title": "About",
+      "url": "/about/",
+      "enabled": true,
+      "order": 5
+    },
+    {
+      "title": "Contact",
+      "url": "/contact/",
+      "enabled": true,
+      "order": 6
+    }
+  ]
+} 
