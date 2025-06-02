@@ -13,7 +13,7 @@ const topics = [
         id: "tech-career-navigation",
         title: "Navigating Technical Career Growth",
         subtitle: "From Code to Leadership Excellence", 
-        description: "A comprehensive guide for students and early-career professionals on building successful technology careers. Covers technical skill development, networking strategies, interview preparation, and the critical transition from individual contributor to technical leadership roles. Includes real-world insights from 25+ years across startups, big tech, and entertainment industries.",
+        description: "A comprehensive guide for students and early-career professionals on building successful technology careers. Covers technical skill development, networking strategies, interview preparation, and the critical transition from individual contributor to technical leadership roles. Includes real-world insights from 20+ years across startups, big tech, and entertainment industries.",
         audiences: ["Students & Early Career", "Engineering Teams", "Engineering Managers"],
         formats: ["session", "workshop", "masterclass"],
         featured: true

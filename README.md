@@ -4,7 +4,7 @@ A professional website for technical leadership consulting and speaking engageme
 
 ## About
 
-This is the personal website for a technical leadership strategist with 25+ years of experience across Amazon, Microsoft, Disney, and Lucasfilm. The site showcases:
+This is the personal website for a technical leadership strategist with 20+ years of experience across Amazon, Microsoft, Disney, and Lucasfilm. The site showcases:
 
 - **Strategic Technical Advisory**: Fractional CTO services, architecture reviews, and strategic planning
 - **Speaking & Training**: Keynotes, workshops, and masterclasses on technical leadership and AI strategy
