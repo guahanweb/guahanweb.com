@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emma's Gift List 2025</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+      min-height: 100vh;
+      padding: 16px;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 24px 16px 32px;
+      margin-bottom: 8px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2d3748;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: #718096;
+    }
+
+    .item-count {
+      display: inline-block;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-top: 12px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 540px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-image {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      background: #f7fafc;
+      border-radius: 12px;
+      margin: 12px;
+      margin-bottom: 0;
+      width: calc(100% - 24px);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: auto;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .card-image img {
+      transform: scale(1.05);
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      z-index: 10;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    .badge-target {
+      background: #e53e3e;
+      color: white;
+    }
+
+    .badge-amazon {
+      background: #dd6b20;
+      color: white;
+    }
+
+    .badge-ebay {
+      background: #3182ce;
+      color: white;
+    }
+
+    .badge-popmart {
+      background: #805ad5;
+      color: white;
+    }
+
+    .card-content {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #2d3748;
+      line-height: 1.4;
+      margin-bottom: 12px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex-grow: 1;
+    }
+
+    .card-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #38a169;
+      margin-bottom: 16px;
+    }
+
+    .card-cta {
+      display: block;
+      width: 100%;
+      padding: 12px 16px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 10px;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .card-cta:hover {
+      opacity: 0.9;
+      transform: scale(1.02);
+    }
+
+    .card-cta:active {
+      transform: scale(0.98);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 16px;
+      color: #a0aec0;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Emma's Gift List 2025</h1>
+    <p>A curated collection of wonderful gift ideas</p>
+    <span class="item-count">54 Items</span>
+  </header>
+
+  <main class="grid">
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_8eab988c-3d4f-43d9-9d4e-ede64a2798db" alt="Squishmallows Squishville 24 Pack Egg Capsules - Series 12" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Squishmallows Squishville 24 Pack Egg Capsules - Series 12 - Collectible Mini 2" Mystery Stuffed Animal Toy Plush - Styles May Vary - Gift for Kids</h2>
+        <div class="card-price">$102.99</div>
+        <a href="https://www.target.com/p/squishmallows-squishville-24-pk-egg-capsules-series-12-official-kellytoy-collectible-mini-2-mystery-stuffed-animal-extras-styles-may-vary/-/A-93230770" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_4937be39-45b8-473d-8f99-b6679fc34393" alt="Hello Kitty 8&quot; Squishmallows Dabodabo Hoodie Cinnamoroll Mass Little Plush" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Hello Kitty 8" Squishmallows Dabodabo Hoodie Cinnamoroll Mass Little Plush</h2>
+        <div class="card-price">$12.99</div>
+        <a href="https://www.target.com/p/hello-kitty-8-34-squishmallows-dabodabo-hoodie-cinnamoroll-mass-little-plush/-/A-94594264" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_8a62a468-3802-4346-b36f-4a9d21a8527a" alt="Cats vs Pickles Jumbo PlushieMeeting Kitty Narwhal" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Cats vs Pickles Jumbo PlushieMeeting Kitty Narwhal, the Darling Blue Narwhal Cat</h2>
+        <div class="card-price">$19.99</div>
+        <a href="https://www.target.com/p/cats-vs-pickles-8-jumbo-plushie-meeting-kitty-narwhal-the-darling-blue-narwhal-cat/-/A-1003787342" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_aad66f35-d51e-49e6-a58f-f6fd46d20ed2" alt="Pokemon Center Sitting Cuties Skiploom Plush" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Pokemon Center: Sitting Cuties: Skiploom Plush # 188 - Generation 2 - 6 In</h2>
+        <div class="card-price">$27.45</div>
+        <a href="https://www.target.com/p/pokemon-center-sitting-cuties-skiploom-plush-188-generation-2-6-in/-/A-1001540018" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_b3bc6783-fdaa-4ebc-80d4-686d5f3b7851" alt="Squishmallows Mystery 3-Squish Value Pack" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Squishmallows Mystery One 10" & Two 8" 3-Squish Value Pack - Collectible Soft & Squishy Stuffed Animal Toy - Gift Set for Kids, Girls & Boys</h2>
+        <div class="card-price">$49.99</div>
+        <a href="https://www.target.com/p/squishmallows-mystery-one-10-two-8-3-squish-value-pack-collectible-soft-squishy-stuffed-animal-toy-gift-set-for-kids-girls-boys/-/A-1005057936" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_d5c3b5d1-5fb9-42d4-bf50-2d9782e3e161" alt="Squishmallows Hello Kitty Mermaid &amp; Sailor 2-Squish Value Pack" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Squishmallows 8" Hello Kitty Mermaid & Sailor 2-Squish Value Pack - Collectible Soft & Squishy Stuffed Animal Toy - Gift Set for Kids, Girls & Boys</h2>
+        <div class="card-price">$34.99</div>
+        <a href="https://www.target.com/p/squishmallows-8-hello-kitty-mermaid-sailor-2-squish-value-pack-collectible-soft-squishy-stuffed-animal-toy-gift-set-for-kids-girls-boys/-/A-1005057947" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_823d125a-afb8-4e13-b3a2-4e14fbfae4c2" alt="Aoibox 2025 Advent Calendar Mini Axolotl Plush Set" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Aoibox 2025 Advent Calendar 24 Piece Mini Axolotl Plush Set 2.5 x 3.7 Inch Christmas Countdown Toys for Kids Teens Gifts</h2>
+        <div class="card-price">$76.65</div>
+        <a href="https://www.target.com/p/aoibox-2025-advent-calendar-24-piece-mini-axolotl-plush-set-2-5-x-3-7-inch-christmas-countdown-toys-for-kids-teens-gifts/-/A-1007810400" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_a471c552-9ed9-4526-b785-bd56f77b1993" alt="NMR Distribution Axolotl Cross Stitch Embroidery Kit" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">NMR Distribution Axolotl Cross Stitch Embroidery Kit</h2>
+        <div class="card-price">$15.99</div>
+        <a href="https://www.target.com/p/nmr-distribution-axolotl-cross-stitch-embroidery-kit/-/A-1007263433" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_599fb610-9368-4fdc-9fd4-ad656f51c541" alt="Aurora Large Mermolotl Sea Sparkles" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Aurora Large Mermolotl Sea Sparkles Enchanting Stuffed Animal Pink 14"</h2>
+        <div class="card-price">$15.90</div>
+        <a href="https://www.target.com/p/aurora-large-mermolotl-sea-sparkles-enchanting-stuffed-animal-pink-14/-/A-90950655" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_54816d7c-e67a-4051-a67f-d32aab675b22" alt="My Squishy Little DJ Mel Mix-A-Lot" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">My Squishy Little DJ Mel Mix-A-Lot by WowWee: Interactive Animal Figures & Accessories Set</h2>
+        <div class="card-price">$15.69</div>
+        <a href="https://www.target.com/p/my-squishy-little-dj-mel-mix-a-lot-by-wowwee/-/A-84797822" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_a180da7d-d888-4181-938d-79f70d5b1dae" alt="Aurora Medium Purple Axolotl Spudsters" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Aurora Medium Purple Axolotl Spudsters Adorable Stuffed Animal 10"</h2>
+        <div class="card-price">$20.07</div>
+        <a href="https://www.target.com/p/aurora-medium-ahava-purple-axolotl-spudsters-adorable-stuffed-animal-10/-/A-1006404389" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_cb76161e-17fe-49f7-87d4-463ed30ce549" alt="Girls Kawaii Axolotl T-Shirt" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Girls' Instant Message Kawaii Axolotl with Bubbles Fitted Short Sleeve Graphic T-Shirt - Heather Black - Small</h2>
+        <div class="card-price">$16.99</div>
+        <a href="https://www.target.com/p/girls-instant-message-kawaii-axolotl-with-bubbles-fitted-short-sleeve-graphic-t-shirt-heather-black-small/-/A-94079379" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_7c5fd4ca-1ab8-4307-9c10-ccb6cf9bdb1d" alt="Aurora Medium Angelo Axolotl Flapjacks" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Aurora Medium Angelo Axolotl Flapjacks Squishy Stuffed Animal Pink 12"</h2>
+        <div class="card-price">$17.86</div>
+        <a href="https://www.target.com/p/aurora-medium-angelo-axolotl-flapjacks-squishy-stuffed-animal-pink-12/-/A-1004074792" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_a13a41dc-8fe2-4262-8ff3-f60d8755928f" alt="Ceramic Axolotl Painting Craft Kit" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Ceramic Axolotl Painting Craft Kit - Mondo Llama™</h2>
+        <div class="card-price">$5.00</div>
+        <a href="https://www.target.com/p/ceramic-axoltl-painting-craft-kit-mondo-llama-8482/-/A-92032786" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_43d1983c-fa7d-481c-9fb9-cf26e78da8b6" alt="Rainbocorns Axolotlcorn Stuffed Animal" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Rainbocorns Axolotlcorn Stuffed Animal</h2>
+        <div class="card-price">$9.99</div>
+        <a href="https://www.target.com/p/rainbocorns-axolotlcorn-stuffed-animal/-/A-93711163" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_d8929154-8f72-4094-8ed8-5039f1bf4068" alt="5 Surprise A-Lot-A Axolotls Mini Figure" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">5 Surprise A-Lot-A Axolotls Mini Figure</h2>
+        <div class="card-price">$4.99</div>
+        <a href="https://www.target.com/p/5-surprise-a-lot-a-axolotls-mini-figure/-/A-91988157" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_a4e88031-455a-4e3b-9559-3c48ef6bf6ee" alt="Make It Real Mini Pottery Studio" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Make It Real Mini Pottery Studio</h2>
+        <div class="card-price">$16.99</div>
+        <a href="https://www.target.com/p/make-it-real-mini-pottery-wheel/-/A-87852709" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_2e0397a0-a6fc-4101-9708-aa37bc732d5b" alt="Gabby's Dollhouse Mermaid Gabby" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Gabby's Dollhouse: The Movie, Sing & Shine Mermaid Gabby, Waterproof Mermaid Doll, Lights & Sounds</h2>
+        <div class="card-price">$29.99</div>
+        <a href="https://www.target.com/p/gabby-39-s-dollhouse-pys-movie-feature-mermaid-interactive-pet-doll/-/A-93615798" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_3d98cc2e-7ca7-458a-b630-11829bace53e" alt="Disney Princess Style Collection Hair Tote" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Disney Princess Style Collection Hair Tote</h2>
+        <div class="card-price">$19.99</div>
+        <a href="https://www.target.com/p/disney-princess-style-collection-hair-tote/-/A-86212820" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_a2585eb1-f846-444b-8e58-b66e1408e20c" alt="Emotional Support Dino Nuggies" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">What Do You Meme? Emotional Support Dino Nuggies Stuffed Animal</h2>
+        <div class="card-price">$16.99</div>
+        <a href="https://www.target.com/p/what-do-you-meme-emotional-support-dino-nuggies-stuffed-animal/-/A-94410662" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_d7c9d90e-ae95-4e4d-a9b4-c95bd2d64127" alt="Our Generation Country Cruising RV Camper" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Our Generation Country Cruising RV Camper Vehicle Playset for 18" Dolls</h2>
+        <div class="card-price">$164.99</div>
+        <a href="https://www.target.com/p/our-generation-country-cruising-rv-camper-vehicle-playset-for-18-34-dolls/-/A-83242828" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_d3ec26e0-0f35-4d2f-bbab-05945b28a425" alt="Disney Doorables Whatcha Gotcha Machine" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Disney Doorables Whatcha Gotcha Machine</h2>
+        <div class="card-price">$9.99</div>
+        <a href="https://www.target.com/p/disney-doorables-whatcha-gotcha-machine/-/A-93709793" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_7191dc6f-cd28-403e-ad5d-9b517c7766c0" alt="Our Generation Surprise Beauty Bags" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Our Generation Surprise Beauty Bags Spa Series - 1 of 6 Collectible Mystery Boxes Accessories for 18" Dolls</h2>
+        <div class="card-price">$9.99</div>
+        <a href="https://www.target.com/p/our-generation-surprise-beauty-bags-spa-series-1-of-6-collectible-mystery-boxes-accessories-for-18-34-dolls/-/A-91942247" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_c00b0a97-d877-4146-9b90-8d7eaf47a20a" alt="FAO Schwarz Makeup Vanity Set" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">FAO Schwarz Makeup Vanity Stunning Style Vanity Set - 25pc</h2>
+        <div class="card-price">$39.99</div>
+        <a href="https://www.target.com/p/fao-schwarz-makeup-vanity-mirror-set/-/A-85378382" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_7555cabe-c976-40fe-84cb-635c2b00029d" alt="Disney Princess Style Collection Makeup Tote" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Disney Princess Style Collection Makeup Tote</h2>
+        <div class="card-price">$19.99</div>
+        <a href="https://www.target.com/p/disney-princess-style-collection-makeup-tote/-/A-86213020" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_44b3911c-b6be-488c-b74f-6b467f37ab59" alt="Our Generation Bubbly Bathtime Bathtub" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Our Generation Bubbly Bathtime Bathtub with Water Sounds Dollhouse Accessory Set for 18'' Dolls</h2>
+        <div class="card-price">$32.99</div>
+        <a href="https://www.target.com/p/our-generation-bubbly-bathtime-bathtub-with-water-sounds-dollhouse-accessory-set-for-18-39-39-dolls/-/A-89051499" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_10960663-8ac1-4f7c-8feb-3f5013a13619" alt="Crayola Neon Art Case" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Crayola Neon Art Case (50+pcs), Holiday Gift for Boys and Girls, With Neon Paint, Markers and Crayons, Kids Glow in The Dark Art Set, Ages 5+</h2>
+        <div class="card-price">$22.99</div>
+        <a href="https://www.target.com/p/crayola-over-50pcs-craft-activity-neon-art-case/-/A-94493236" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_7424da35-d8a4-4bf2-85b7-ad4dcf5b45c2" alt="Snackles 5&quot; Capsule Series 3" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Snackles 5" Capsule Series 3 Stuffed Animal: Zoo & Farm Characters, Polyester</h2>
+        <div class="card-price">$7.49</div>
+        <a href="https://www.target.com/p/snackles-5-34-capsule-series-3-stuffed-animal/-/A-94602112" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_5a7a0511-1631-4078-a5e9-40baa2a19de9" alt="Mini Brands Fill the Fridge Mini Minis" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Mini Brands Fill the Fridge Mini Minis Series 1: Plastic Mini Figures Set, Includes 5 Figures</h2>
+        <div class="card-price">$7.99</div>
+        <a href="https://www.target.com/p/mini-brands-fill-the-fridge-mini-minis-series-1/-/A-93707459" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_6f339359-ce81-4b25-ad44-ec062b7c4a61" alt="Our Generation Snacktime Fun Pink Vending Machine" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Our Generation Snacktime Fun Pink Vending Machine & Play Food Accessories Set for 18" Dolls</h2>
+        <div class="card-price">$64.99</div>
+        <a href="https://www.target.com/p/our-generation-snacktime-fun-pink-vending-machine-38-play-food-accessories-set-for-18-34-dolls/-/A-89948466" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_672dc74b-1e44-4718-8089-7ccd2c0f001e" alt="Mini Brands Disney Create Series 1 Capsule" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Mini Brands Disney Create Series 1 Capsule: Includes Mini Figure, Plastic Material</h2>
+        <div class="card-price">$9.99</div>
+        <a href="https://www.target.com/p/mini-brands-disney-create-series-1-capsule/-/A-93707457" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_dca7606a-3e32-49f8-904d-9f9357b2582a" alt="Mini Brands Fill the Fridge Playset" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Mini Brands Fill the Fridge Playset</h2>
+        <div class="card-price">$19.99</div>
+        <a href="https://www.target.com/p/mini-brands-fill-the-fridge-playset/-/A-93707453" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_62258177-da90-4859-acd5-80d7145a4a70" alt="Gui Gui Beautify Your Slime Kit" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Gui Gui Beautify Your Slime Kit (Styles May Vary)</h2>
+        <div class="card-price">$9.99</div>
+        <a href="https://www.target.com/p/gui-gui-beautify-your-slime-kit-styles-may-vary/-/A-94284897" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_0c942d7e-fece-4a38-989e-0ce90184a7c1" alt="Disney Wish Mini Collectible Plush" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Disney Wish Mini Collectible 3-inch Plush Toy (One Pack) in Wishing Star Blind Bag Inspired Capsule, Kids Toys for Ages 3 up</h2>
+        <div class="card-price">$10.98</div>
+        <a href="https://www.target.com/p/disney-wish-mini-collectible-3-inch-plush-toy-one-pack-in-wishing-star-blind-bag-inspired-capsule-kids-toys-for-ages-3-up/-/A-1001694495" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_d46e97e2-d4b0-4609-93e2-53c086a319b8" alt="Gabby's Dollhouse MerCat Bobble Figure" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Gabby's Dollhouse, Celebration Series MerCat Bobble Figure with Dollhouse Furniture and Accessories, Kids Toys for Girls & Boys Ages 3 and Up</h2>
+        <div class="card-price">$24.99</div>
+        <a href="https://www.target.com/p/gabby-s-dollhouse-celebration-series-mercat-bobble-figure-with-dollhouse-furniture-and-accessories-kids-toys-for-girls-boys-ages-3-and-up/-/A-92452326" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_4bc66364-eaf4-420f-b871-62f811b2b7dc" alt="Our Generation Love U Latte Coffee Shop" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Our Generation Love U Latte Coffee Shop Playset - 64pc</h2>
+        <div class="card-price">$119.99</div>
+        <a href="https://www.target.com/p/our-generation-love-u-latte-coffee-shop-playset-for-18-34-dolls/-/A-87669065" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_dc569a4d-b673-46bf-a9c6-5119d1690256" alt="Our Generation Packed for Adventures Luggage Set" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Our Generation Packed for Adventures Pink Luggage Scooter Suitcase & Accessories Set for 18" Dolls: 20-Piece Travel Set</h2>
+        <div class="card-price">$32.99</div>
+        <a href="https://www.target.com/p/our-generation-packed-for-adventures-pink-luggage-scooter-suitcase-38-accessories-set-for-18-34-dolls/-/A-93655992" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_81b611db-5803-4459-bb1d-a3500877b958" alt="LEGO Disney Angel Lilo &amp; Stitch" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">LEGO Disney Angel Lilo & Stitch Kids Building Toy 43257</h2>
+        <div class="card-price">$51.99</div>
+        <a href="https://www.target.com/p/lego-disney-angel-lilo-38-stitch-kids-building-toy-43257/-/A-93342493" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_57356146-ecf5-47da-993c-d4fb9fe894f0" alt="LEGO Disney Stitch Buildable" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">LEGO Disney Stitch Buildable Kids' Toy Playset 43249</h2>
+        <div class="card-price">$51.99</div>
+        <a href="https://www.target.com/p/lego-disney-stitch-buildable-kids-39-toy-playset-43249/-/A-89144364" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_c7a181f8-0cd9-4816-9a04-56432abb9d47" alt="Creativity for Kids Grow N' Glow Terrarium" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Creativity for Kids Grow N' Glow Terrarium: Science Kit for Kids, Educational Toy, Includes Jar, Figures, Stickers, Rocks</h2>
+        <div class="card-price">$12.99</div>
+        <a href="https://www.target.com/p/creativity-for-kids-grow-n-glow-terrarium/-/A-16710285" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-target">Target</span>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_3380fc62-b9b4-4313-b483-15a035ed73d6" alt="FAO Schwarz Hello Kitty Toy Vending Machine" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">FAO Schwarz Hello Kitty and Friends Toy Vending Machine</h2>
+        <div class="card-price">$39.99</div>
+        <a href="https://www.target.com/p/fao-schwarz-sanrio-toy-vending-machine-throwback-play-market-stand-13pk/-/A-94409273" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-amazon">Amazon</span>
+        <img src="https://m.media-amazon.com/images/I/811hdSTkufL._AC_SL1500_.jpg" alt="Gui Gui Slime Kit" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Gui Gui Slime Kit - Scented Shimmer Deluxe Duo Pack with 2 Iridescent Slimes, 5 Step DIY Process to Customize Your Ultimate Slime Glow-Up</h2>
+        <div class="card-price">$19.99</div>
+        <a href="https://a.co/d/25VWHec" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-amazon">Amazon</span>
+        <img src="https://m.media-amazon.com/images/I/81jOFUW6L1L._AC_SL1500_.jpg" alt="FURBY DJ Interactive Toy" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">FURBY DJ Interactive Toy, Super Snuggly Rainbow Electronic Plush with Music, Lights, Motion, & Games, Speaks English & Furbish, 32in Long, Ages 6+</h2>
+        <div class="card-price">$55.99</div>
+        <a href="https://a.co/d/79ZxD4J" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-amazon">Amazon</span>
+        <img src="https://m.media-amazon.com/images/I/71XVMb8RXAL._AC_SL1500_.jpg" alt="3Doodler Start+ 3D Pen Set" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">3Doodler Start+ Essentials 3D Pen Set for Kids, Easy to Use, Learn from Home Art Activity Set, Educational STEM Toy for Boys & Girls Ages 6+</h2>
+        <div class="card-price">$59.99</div>
+        <a href="https://a.co/d/g2ciJvI" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-amazon">Amazon</span>
+        <img src="https://m.media-amazon.com/images/I/7126IIfAZgL._AC_SL1500_.jpg" alt="LEGO Botanicals Happy Plants" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">LEGO Botanicals Happy Plants Building Toys - Bedroom or Dorm Room Decor for Girls, Boys, & Adults, Desk or Shelf Display - Stocking Stuffers & Gift for Christmas - 10349</h2>
+        <div class="card-price">$18.39</div>
+        <a href="https://a.co/d/2joBQv3" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-amazon">Amazon</span>
+        <img src="https://m.media-amazon.com/images/I/81Cw-wuT5DL._AC_SL1500_.jpg" alt="Tamagotchi Original Celebration Y3K" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Tamagotchi Original - Celebration Y3K + Translucent Cover Case (Amazon Exclusive)</h2>
+        <div class="card-price">$29.99</div>
+        <a href="https://a.co/d/jcF6NiH" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-amazon">Amazon</span>
+        <img src="https://m.media-amazon.com/images/I/71zuLw28lEL._AC_SL1500_.jpg" alt="Furby Gold Glam Interactive Plush" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Furby Gold Glam Interactive Plush Toys for 6 Year Old Girls & Boys & Up, Voice Activated Animatronic, Speaks English & Furbish, White, Christmas Stocking Stuffers (Amazon Exclusive)</h2>
+        <div class="card-price">$59.99</div>
+        <a href="https://a.co/d/gIa7ed1" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-amazon">Amazon</span>
+        <img src="https://m.media-amazon.com/images/I/71uQzrBeWoL._AC_SL1360_.jpg" alt="The Lafufu Coloring Book" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">The Lafufu Coloring Book: Expanded Edition (Lafufu Activity Books)</h2>
+        <div class="card-price">$12.00</div>
+        <a href="https://a.co/d/aUzzSOI" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-amazon">Amazon</span>
+        <img src="https://m.media-amazon.com/images/I/61DdBnb2HhL._AC_SL1500_.jpg" alt="Labubu Christmas Wardrobe Penguin Set" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">YHNNH For Labubu Christmas Wardrobe Winter Seasonal Holiday outfits (Penguin Xmas Set)</h2>
+        <div class="card-price">$13.99</div>
+        <a href="https://a.co/d/1Ix4X5x" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-amazon">Amazon</span>
+        <img src="https://m.media-amazon.com/images/I/61DdBnb2HhL._AC_SL1500_.jpg" alt="Labubu Christmas Wardrobe Snow Kitten Set" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">YHNNH For Labubu Christmas Wardrobe Winter Seasonal Holiday outfits (Snow Kitten Set)</h2>
+        <div class="card-price">$13.99</div>
+        <a href="https://a.co/d/5lWq2SL" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-amazon">Amazon</span>
+        <img src="https://m.media-amazon.com/images/I/71ThjDoeBjL._AC_SL1500_.jpg" alt="Taba Squishy Cookie Stress Relief Toy" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Taba Squishy Stress Relief Toy – Ultra-Soft Realistic Cookie Squeeze, New Handmade Silicone Stress Relief Squishy Toy</h2>
+        <div class="card-price">$14.99</div>
+        <a href="https://a.co/d/4l27uCK" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-ebay">eBay</span>
+        <img src="https://i.ebayimg.com/images/g/bqkAAeSwJj9ofxRY/s-l1600.jpg" alt="Pop Mart Labubu Big Into Energy Serenity" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Authentic Pop Mart Labubu Big Into Energy- Serenity (In Hand, Next Day Ship)</h2>
+        <div class="card-price">$37.00</div>
+        <a href="https://www.ebay.com/itm/226880106492" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-popmart">Popmart</span>
+        <img src="https://www.stadiumgoods.com/cdn/shop/files/bqn1h566c6j4mxwbais9d5eaqpka.png?v=1748363415" alt="THE MONSTERS Big into Energy Series" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">THE MONSTERS Big into Energy Series-Vinyl Plush Pendant Blind Box</h2>
+        <div class="card-price">$27.99</div>
+        <a href="https://www.popmart.com/us/pop-now/set/195" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>Generated on December 11, 2025</p>
+  </footer>
+</body>
+</html>
