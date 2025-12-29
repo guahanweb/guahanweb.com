@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Party Ideas</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --color-bg: #fefefe;
+      --color-card: #ffffff;
+      --color-text: #2d2d2d;
+      --color-text-muted: #6b6b6b;
+      --color-accent: #e91e63;
+      --color-accent-hover: #c2185b;
+      --color-border: #f0f0f0;
+      --color-price: #2e7d32;
+      --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.06);
+      --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.1);
+      --radius: 12px;
+      --transition: 0.2s ease;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 16px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin: 0 0 8px 0;
+      color: var(--color-text);
+    }
+
+    .subtitle {
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--color-card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-card-hover);
+      transform: translateY(-2px);
+    }
+
+    .card-image {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: contain;
+      background: #fafafa;
+      padding: 16px;
+    }
+
+    .card-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin: 0 0 8px 0;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-description {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      margin: 0 0 16px 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: auto;
+    }
+
+    .price {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-price);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 16px;
+      background: var(--color-accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: background var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      background: var(--color-accent-hover);
+    }
+
+    .btn svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .source-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--color-text-muted);
+      background: var(--color-border);
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+
+    /* Tablet: 2 columns */
+    @media (min-width: 600px) {
+      .container {
+        padding: 32px 24px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+
+      .card-body {
+        padding: 20px;
+      }
+    }
+
+    /* Desktop: 3 columns */
+    @media (min-width: 900px) {
+      .container {
+        padding: 48px 32px;
+      }
+
+      header {
+        margin-bottom: 48px;
+      }
+
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+      }
+    }
+
+    /* Large desktop: 4 columns */
+    @media (min-width: 1200px) {
+      .grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Birthday Party Ideas</h1>
+      <p class="subtitle">18 curated items for your celebration</p>
+    </header>
+
+    <div class="grid">
+
+      <article class="card">
+        <img class="card-image" src="https://i.etsystatic.com/54318738/r/il/f4a0e1/7597898401/il_1588xN.7597898401_pb8j.jpg" alt="Birthday Shirt | Hello Cat All Family Celebration T-shirt" loading="lazy">
+        <div class="card-body">
+          <span class="source-badge">Etsy</span>
+          <h2 class="card-title">Birthday Shirt | Hello Cat All Family Celebration T-shirt | Customized Birthday Tee</h2>
+          <p class="card-description">Unisex cut t-shirts made from quality cotton/poly blend. Soft to the touch with heat vinyl printing for durability and vibrant colors. Sizes are consistent and true to fit.</p>
+          <div class="card-footer">
+            <span class="price">$7.95+</span>
+            <a href="https://www.etsy.com/listing/1880990638/birthday-shirt-hello-cat-all-family" target="_blank" rel="noopener" class="btn">
+              View Item
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-image" src="https://m.media-amazon.com/images/I/71D4ynh5qLL._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="49Pcs Kitty Birthday Party Decorations Set" loading="lazy">
+        <div class="card-body">
+          <span class="source-badge">Amazon</span>
+          <h2 class="card-title">49Pcs - Kitty Birthday Party Decorations Set, Pink Theme with Banner, Balloons, Tablecloth, Cake Toppers</h2>
+          <p class="card-description">Complete party set includes Happy Birthday banner, character balloons, foil balloons, hanging swirls, latex balloons, cupcake toppers, and tablecloth.</p>
+          <div class="card-footer">
+            <span class="price">$18.99</span>
+            <a href="https://www.amazon.com/dp/B0FW4F5M3J" target="_blank" rel="noopener" class="btn">
+              View Item
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-image" src="https://m.media-amazon.com/images/I/71EmaWivi4L._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="Pink Bow Birthday Party Decorations" loading="lazy">
+        <div class="card-body">
+          <span class="source-badge">Amazon</span>
+          <h2 class="card-title">Pink Bow Birthday Party Decorations - Happy Birthday Banners & Hanging Swirl Cartoon Cat Theme</h2>
+          <p class="card-description">Includes 10 pink hanging swirls, 10 cards, and a pre-assembled pink bow-themed "HAPPY BIRTHDAY" banner with various charming cutout designs.</p>
+          <div class="card-footer">
+            <span class="price">$10.99</span>
+            <a href="https://a.co/d/3Ube6zq" target="_blank" rel="noopener" class="btn">
+              View Item
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-image" src="https://m.media-amazon.com/images/I/61+vxFBCWvL._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="96pcs Pink Cat Birthday Party Tableware" loading="lazy">
+        <div class="card-body">
+          <span class="source-badge">Amazon</span>
+          <h2 class="card-title">96pcs Pink Cat Birthday Party Tableware Set - Plates, Napkins & Forks for 24 Guests</h2>
+          <p class="card-description">Includes 24 paper plates (9-inch), 24 dessert plates (7-inch), 24 napkins, and 24 forks. Sturdy material with vibrant colors and cute cat patterns.</p>
+          <div class="card-footer">
+            <span class="price">$16.99</span>
+            <a href="https://a.co/d/1uL0dv0" target="_blank" rel="noopener" class="btn">
+              View Item
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-image" src="https://m.media-amazon.com/images/I/51sWMsMItFL._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="Hello Kitty Foil Balloon" loading="lazy">
+        <div class="card-body">
+          <span class="source-badge">Amazon</span>
+          <h2 class="card-title">Toyland 30" Hello Kitty Dressed In Pink Foil Balloon</h2>
+          <p class="card-description">Inflate with air or helium. Once inflated will stay up for over 7 days. Features automatic sealing valve. Fantastic decoration for any Hello Kitty fan!</p>
+          <div class="card-footer">
+            <span class="price">$11.99</span>
+            <a href="https://www.amazon.com/dp/B07TFJT4G7" target="_blank" rel="noopener" class="btn">
+              View Item
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-image" src="https://m.media-amazon.com/images/I/61JXsqKk-cL._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="Pin The Bow Party Game" loading="lazy">
+        <div class="card-body">
+          <span class="source-badge">Amazon</span>
+          <h2 class="card-title">Cute Pink Birthday Party Game - Pin The Bow on The Cat with 24 Stickers</h2>
+          <p class="card-description">Includes giant pink poster (20.4"x28.3"), 24 reusable bow stickers, 2 adjustable blindfolds, and adhesive rolls. Fun sticker challenge for friends!</p>
+          <div class="card-footer">
+            <span class="price">$14.59</span>
+            <a href="https://www.amazon.com/dp/B0FR22VRSC" target="_blank" rel="noopener" class="btn">
+              View Item
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-image" src="https://m.media-amazon.com/images/I/810qz5yTm-L._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="Hello Kitty Slime Set" loading="lazy">
+        <div class="card-body">
+          <span class="source-badge">Amazon</span>
+          <h2 class="card-title">Hello Kitty Ultimate Slime Set - 25-Pack Scented Glitter Slimes, Party Favors</h2>
+          <p class="card-description">Every sparkly slime has a fun scent and Sanrio character. Pre-made and ready to play with resealable containers. The ultimate slime party favors!</p>
+          <div class="card-footer">
+            <span class="price">$16.81</span>
+            <a href="https://www.amazon.com/dp/B0D94NG7J5" target="_blank" rel="noopener" class="btn">
+              View Item
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-image" src="https://m.media-amazon.com/images/I/81j1CuI9fCL._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="Hello Kitty Holiday Gel Pens" loading="lazy">
+        <div class="card-body">
+          <span class="source-badge">Amazon</span>
+          <h2 class="card-title">Hello Kitty and Friends Holiday Gel Pens, 6-Pack with Fun Sanrio Pen Toppers</h2>
+          <p class="card-description">Smooth-flowing milky gel ink in 6 cheerful colors. Each pen features a beloved Hello Kitty friend wearing a festive Santa hat!</p>
+          <div class="card-footer">
+            <span class="price">$7.99</span>
+            <a href="https://www.amazon.com/dp/B0D94QBRYC" target="_blank" rel="noopener" class="btn">
+              View Item
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-image" src="https://m.media-amazon.com/images/I/81q5bJgscwL._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="Hello Kitty Erasable Gel Pens" loading="lazy">
+        <div class="card-body">
+          <span class="source-badge">Amazon</span>
+          <h2 class="card-title">Hello Kitty 5pcs Erasable Gel Ink Pens - Cute Writing Pens for Kids</h2>
+          <p class="card-description">Erasable gel pens with 0.7mm nib and protective cover. Smooth blue ink ideal for journaling and handwriting. Perfect for kids who love kawaii stationery!</p>
+          <div class="card-footer">
+            <span class="price">$15.49</span>
+            <a href="https://www.amazon.com/dp/B0F7Y46K8W" target="_blank" rel="noopener" class="btn">
+              View Item
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-image" src="https://m.media-amazon.com/images/I/710Gb6W6DPL._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="Cute Office Supplies Set" loading="lazy">
+        <div class="card-body">
+          <span class="source-badge">Amazon</span>
+          <h2 class="card-title">Cute Office Supplies - 6 Cartoon Gel Pens & 8 Pack Small Sticky Notes Gift Set</h2>
+          <p class="card-description">Includes 6 gel pens and 8 pack sticky notes with cartoon pattern design. Premium 0.5mm rollerball ink that writes clearly and dries quickly.</p>
+          <div class="card-footer">
+            <span class="price">$16.95</span>
+            <a href="https://www.amazon.com/dp/B0D9LRYZ67" target="_blank" rel="noopener" class="btn">
+              View Item
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-image" src="https://m.media-amazon.com/images/I/71j6A9V2y8L._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="Cartoon Ballpoint Pens" loading="lazy">
+        <div class="card-body">
+          <span class="source-badge">Amazon</span>
+          <h2 class="card-title">Cartoon Ballpoint Pens 6 pcs - 10 Colors in One Retractable Multicolor Pens</h2>
+          <p class="card-description">Cute cartoon design with 10 colors in each pen. Retractable to switch quickly and easily. Perfect gift for birthdays, party favors, and office supplies.</p>
+          <div class="card-footer">
+            <span class="price">$10.99</span>
+            <a href="https://www.amazon.com/dp/B0FSPMDCM1" target="_blank" rel="noopener" class="btn">
+              View Item
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-image" src="https://m.media-amazon.com/images/I/81YXFlwo5EL._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="Bracelet Making Party Favors" loading="lazy">
+        <div class="card-body">
+          <span class="source-badge">Amazon</span>
+          <h2 class="card-title">Bracelet Making Party Favors for Kids - 24 Bracelet Wands Crafts for Girls</h2>
+          <p class="card-description">Kit includes everything to make 24 bracelets stored in wands with 7 colors and 8 cartoon patterns. 15 different bead styles inside. Ages 4-8.</p>
+          <div class="card-footer">
+            <span class="price">$28.99</span>
+            <a href="https://a.co/d/brmYDqR" target="_blank" rel="noopener" class="btn">
+              View Item
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-image" src="https://m.media-amazon.com/images/I/81nHH+4OOxL._AC_SX342_SY445_QL70_FMwebp_.jpg" alt="Paper Crowns and Masks" loading="lazy">
+        <div class="card-body">
+          <span class="source-badge">Amazon</span>
+          <h2 class="card-title">48 PCS Color Your Own Paper Crowns and Paper Masks - DIY Art Coloring Craft</h2>
+          <p class="card-description">DIY art coloring craft activity for kids birthday dress up party favors and decoration. Great for school and home art activities.</p>
+          <div class="card-footer">
+            <span class="price">$17.49</span>
+            <a href="https://a.co/d/7B4twyy" target="_blank" rel="noopener" class="btn">
+              View Item
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-image" src="https://m.media-amazon.com/images/I/811-oY6xryL._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="Rock Painting Kit" loading="lazy">
+        <div class="card-body">
+          <span class="source-badge">Amazon</span>
+          <h2 class="card-title">Rock Painting Kit - Glow in The Dark, Arts and Crafts for Kids Ages 6-12</h2>
+          <p class="card-description">Includes 10 rocks, paints (standard, metallic, glow-in-dark), glitter glue, brushes, wiggly eyes, sponges, transfer stickers, and gems.</p>
+          <div class="card-footer">
+            <span class="price">$13.99</span>
+            <a href="https://a.co/d/a9DQVTI" target="_blank" rel="noopener" class="btn">
+              View Item
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-image" src="https://m.media-amazon.com/images/I/81yFVJzqxFL._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="Paint by Numbers for Kids" loading="lazy">
+        <div class="card-body">
+          <span class="source-badge">Amazon</span>
+          <h2 class="card-title">6 Pack Cartoon Paint by Numbers for Kids with Framed Canvas & Wooden Easel</h2>
+          <p class="card-description">Each set includes framed canvas with cartoon design, high quality paints, hooks, and brushes. Wooden easel included. Great for ages 4-12.</p>
+          <div class="card-footer">
+            <span class="price">$25.99</span>
+            <a href="https://a.co/d/8US1kBv" target="_blank" rel="noopener" class="btn">
+              View Item
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-image" src="https://m.media-amazon.com/images/I/71maCdQBzgL._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="Wooden Picture Frames" loading="lazy">
+        <div class="card-body">
+          <span class="source-badge">Amazon</span>
+          <h2 class="card-title">6pcs Wooden Picture Frames 4x6 inch - DIY Unfinished Craft Frames with Stickers</h2>
+          <p class="card-description">Crafted from sturdy, odorless solid wood. Safe for children, durable, and resistant to breakage. Includes 60 stickers for decorating.</p>
+          <div class="card-footer">
+            <span class="price">$13.68</span>
+            <a href="https://a.co/d/7potiW0" target="_blank" rel="noopener" class="btn">
+              View Item
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-image" src="https://m.media-amazon.com/images/I/81zMg1pfGyL._AC_SX300_SY300_QL70_FMwebp_.jpg" alt="Daisy Seeds Mini Pot Pack" loading="lazy">
+        <div class="card-body">
+          <span class="source-badge">Amazon</span>
+          <h2 class="card-title">BUZZY Daisy Seeds & Terracotta Mini Pot Bulk Pack (20 Count) - Great for Favors</h2>
+          <p class="card-description">Includes 20 genuine terracotta pots, 20 soil pellets, and 20 packets of premium daisy seeds. Ideal for parties, weddings, and creative planting activities.</p>
+          <div class="card-footer">
+            <span class="price">$28.99</span>
+            <a href="https://a.co/d/hA0tBY0" target="_blank" rel="noopener" class="btn">
+              View Item
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-image" src="https://m.media-amazon.com/images/I/915X2enQ2kL._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="Herb Seeds Variety Pack" loading="lazy">
+        <div class="card-body">
+          <span class="source-badge">Amazon</span>
+          <h2 class="card-title">Seed Needs Herb Seeds Variety Pack - 12 Culinary Herbs for Indoor/Outdoor</h2>
+          <p class="card-description">Includes basil, chives, cilantro, dill, marjoram, oregano, parsley, sage, thyme, borage, summer savory & rosemary. Heirloom, Non-GMO seeds.</p>
+          <div class="card-footer">
+            <span class="price">$8.99</span>
+            <a href="https://a.co/d/4sIok2R" target="_blank" rel="noopener" class="btn">
+              View Item
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</body>
+</html>
