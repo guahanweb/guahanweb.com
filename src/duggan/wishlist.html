@@ -206,13 +206,60 @@
       color: #a0aec0;
       font-size: 0.875rem;
     }
+
+    /* Purchased state */
+    .card.purchased {
+      opacity: 0.65;
+      filter: grayscale(40%);
+    }
+
+    .card.purchased:hover {
+      transform: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .card.purchased .card-image img {
+      transform: none;
+    }
+
+    .card.purchased .card-price {
+      text-decoration: line-through;
+      color: #a0aec0;
+    }
+
+    .card.purchased .card-cta {
+      background: #cbd5e0;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    .card.purchased .card-cta:hover {
+      opacity: 1;
+      transform: none;
+    }
+
+    .purchased-badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: #38a169;
+      color: white;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      z-index: 10;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Emma's Gift List 2025</h1>
     <p>A curated collection of wonderful gift ideas</p>
-    <span class="item-count">54 Items</span>
+    <span class="item-count">55 Items</span>
   </header>
 
   <main class="grid">
@@ -851,10 +898,22 @@
         <a href="https://www.popmart.com/us/pop-now/set/195" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
       </div>
     </article>
+
+    <article class="card">
+      <div class="card-image">
+        <span class="card-badge badge-amazon">Amazon</span>
+        <img src="https://m.media-amazon.com/images/I/81yFVJzqxFL._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="nekpiahu 6 Pack Cartoon Paint by Numbers for Kids" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">nekpiahu 6 Pack Cartoon Paint by Numbers for Kids with Framed Canvas-Cartoon Paint by Numbers for Kids Ages 4-8-12, Kid Paint by Number Crafts Kits for Home Wall Decor GIF 8X8incht(with Wooden Easel)</h2>
+        <div class="card-price">$25.99</div>
+        <a href="https://www.amazon.com/dp/B0FFH57ZRG" target="_blank" rel="noopener noreferrer" class="card-cta">View Item</a>
+      </div>
+    </article>
   </main>
 
   <footer>
-    <p>Generated on December 11, 2025</p>
+    <p>Generated on December 31, 2025</p>
   </footer>
 </body>
 </html>
